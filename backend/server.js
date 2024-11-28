@@ -5,22 +5,27 @@ import { connectDB } from './config/db.js';
 import jobRoutes from './routes/job.route.js';
 import userRoutes from './routes/user.route.js';
 
+dotenv.config()
 
 const PORT = process.env.PORT || 5010
 
 const app = express()
-dotenv.config()
-app.use(cors())
+
+app.use(cors({
+    origin: 'process.env.FRONTEND_URL'
+}))
 app.use(express.json())
 
 app.use('/jobs', jobRoutes)
 app.use('/users', userRoutes)
 
-app.json({
-    status: 'success',
-    message: 'API is running'
+app.get('/', async (req, res) => {
+    console.log(req)
+    res.json({
+        status: 'success', 
+        message: 'Server is running'
+    })
 })
-
 
 app.listen(PORT, () => {
     connectDB()
