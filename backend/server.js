@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5010
 const app = express()
 
 app.use(cors({
-    origin: 'process.env.FRONTEND_URL'
+    origin: process.env.FRONTEND_URL
 }))
 app.use(express.json())
 
@@ -21,10 +21,7 @@ app.use('/users', userRoutes)
 
 app.get('/', async (req, res) => {
     console.log(req)
-    res.json({
-        status: 'success', 
-        message: 'Server is running'
-    })
+    res.json("API is running")
 })
 
 app.listen(PORT, () => {
