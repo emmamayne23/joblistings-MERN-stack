@@ -11,23 +11,12 @@ const PORT = process.env.PORT || 5010
 
 const app = express()
 
-app.use(cors({
-    origin: [
-        process.env.FRONTEND_URL,
-        'http://localhost:3000'
-    ],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
-}))
+app.use(cors())
+
 app.use(express.json())
 
 app.use('/jobs', jobRoutes)
 app.use('/users', userRoutes)
-
-app.get('/', async (req, res) => {
-    res.json("API is running")
-})
 
 app.listen(PORT, () => {
     connectDB()
