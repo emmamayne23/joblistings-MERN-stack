@@ -16,6 +16,11 @@ app.use(express.json())
 app.use('/jobs', jobRoutes)
 app.use('/users', userRoutes)
 
+app.json({
+    status: 'success',
+    message: 'API is running'
+})
+
 
 app.listen(PORT, () => {
     connectDB()
