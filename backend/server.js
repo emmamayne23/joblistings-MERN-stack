@@ -12,7 +12,11 @@ const PORT = process.env.PORT || 5010
 const app = express()
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL
+    origin: process.env.NODE_ENV === 'production' 
+        ? process.env.FRONTEND_URL 
+        : 'http://localhost:5010',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }))
 app.use(express.json())
 
@@ -20,7 +24,6 @@ app.use('/jobs', jobRoutes)
 app.use('/users', userRoutes)
 
 app.get('/', async (req, res) => {
-    console.log(req)
     res.json("API is running")
 })
 
