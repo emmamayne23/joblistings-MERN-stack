@@ -11,7 +11,10 @@ const PORT = process.env.PORT || 5010
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin: 'https://jobconnect-zeta.vercel.app',
+    credentials: true
+}))
 
 app.use(express.json())
 
