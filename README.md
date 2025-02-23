@@ -6,7 +6,8 @@ A full-stack job board application that connects employers with job seekers. Fea
 
 JobConnect is a MERN stack application designed to streamline the job search and hiring process. Employers can post job opportunities while job seekers can browse and apply for positions that match their skills and interests.
 
-![JobConnect Screenshot](https://path-to-your-screenshot.png)
+![JobConnect Screenshot]
+![joblistings site](https://github.com/user-attachments/assets/2f8ce15d-2d4d-4d05-920b-f13f2780dae0)
 
 ## Features
 
