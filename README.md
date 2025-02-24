@@ -1,4 +1,4 @@
-# JobConnect - Job Search & Posting Platform
+# JobConnect 💼 - Job Search & Posting Platform
 
 A full-stack job board application that connects employers with job seekers. Featuring job listings, application management, and job posting capabilities.
 
