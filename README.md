@@ -27,7 +27,6 @@ JobConnect is a MERN stack application designed to streamline the job search and
 - Post new job listings
 - Manage job postings
 - Edit or remove listings
-- View applicant profiles
 - Track applications received
 - Update job status
 
